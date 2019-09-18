@@ -79,3 +79,53 @@ body
       background-color: transparent
   &__err
       color: #da0707
+
+.container
+  width: 1200px
+  margin: 0 auto
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+
+.sidebar
+  width: 250px
+  height: 100vh
+  position: fixed
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__list
+    width: 100%
+    font-family: "Montserrat", sans-serif
+
+  &__logo
+    width: 50%
+  &__link
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+    align-items: center
+    height: 60px
+    width: 100%
+    position: relative
+    text-decoration: none
+    color: #000
+    font-size: 18px
+    padding-left: 20px
+    transition: all .2s
+    &:hover
+      background-color: #FFCA00
+    &::before
+      content: ""
+      margin-right: 24px
+      background-color: #5E04D5
+      width: 30px
+      height: 30px
+
+.content
+  width: calc(100% - 250px)
+  margin-left: 250px
+  height: 1000px
+  background-color: #F1F2F6
