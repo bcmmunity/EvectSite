@@ -18,11 +18,10 @@ function rand(min, max) {
     let dates = [];
     let test = [];
     let count = 0;
-    const interval = 10;
-    for (let i = 1; i < 100; i++) {
+    const interval = 15;
+    for (let i = 1; i < 1000; i++) {
       test.push([date.getHours() - 10 + rand(1,8), rand(1, 59), 0 ]);
     }
-    console.log(test)
 
     test = test.sort((a, b) => {
       let j = new Date(date.getYear(), date.getMonth(), date.getDay(), a[0], a[1], a[2]);
@@ -64,7 +63,7 @@ function rand(min, max) {
 
 
         oldDate.setMinutes(j * interval);
-        dates.push([[newDate.getHours() - 3,newDate.getMinutes(),newDate.getSeconds()],count])
+        dates.push([[newDate.getHours() - 3,newDate.getMinutes(), 0, 0],count])
 
 
       }
@@ -73,7 +72,7 @@ function rand(min, max) {
 
     }
 
-
+    console.log(dates)
 
 
 
@@ -86,16 +85,16 @@ function rand(min, max) {
 
       data.addRows(dates);
       var options = {
-        hAxis: {
-          title: 'Время',
-        },
         colors: ['#5E04D5'],
         animation: {
           duration: 500,
           easing: 'inAndOut',
           startup: true
         },
-        fontName: 'Montserrat'
+        fontName: 'Montserrat',
+        hAxis: {
+           format: 'HH:mm',
+         },
 
       };
 
