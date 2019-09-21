@@ -17,11 +17,11 @@ function rand(min, max) {
       startVal: 5,
       duration: 4,
     };
-    // new CountUp('totalCount', 10000, options).start();
-    // new CountUp('networkingCount', 10000, options).start();
-    // new CountUp('meetCount', 10000, options).start();
-    // new CountUp('contactCount', 10000, options).start();
-    // new CountUp('bookCount', 10000, options).start();
+    new CountUp('totalCount', rand(1, 59), options).start();
+    new CountUp('networkingCount', rand(1, 59), options).start();
+    new CountUp('meetCount', rand(1, 59), options).start();
+    new CountUp('contactCount', rand(1, 59), options).start();
+    new CountUp('bookCount', rand(1, 59), options).start();
 
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
@@ -118,11 +118,6 @@ function rand(min, max) {
         height: 300 ,
         legend: {
           position: 'in'
-        },
-        animation: {
-          duration: 500,
-          easing: 'inAndOut',
-          startup: true
         },
         fontName: 'Montserrat',
         hAxis: {
