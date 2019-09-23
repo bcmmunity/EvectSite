@@ -2,6 +2,16 @@
   font-family: "Montserrat";
   src: url("../fonts/Montserrat-Medium--ft3.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light--ft3.ttf") format("truetype");
+  font-family: 300;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold--ft3.ttf") format("truetype");
+  font-weight: 700;
+}
 body {
   font-family: "Montserrat", sans-serif;
   display: -webkit-flex;
@@ -16,9 +26,9 @@ b {
 }
 
 g path {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: dash 4s linear forwards;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: dash 2s linear forwards;
 }
 
 @keyframes dash {
@@ -172,6 +182,7 @@ g path {
   padding-top: 20px;
   padding-left: 30px;
   padding-right: 50px;
+  padding-bottom: 20px;
   background-color: #fff;
   width: 100%;
 }
@@ -204,11 +215,12 @@ g path {
 }
 .content .info .table {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr 3fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
 }
 .content .info .table .col {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 300;
 }
 .content .info .table .col__header {
   padding: 15px 10px;
@@ -217,6 +229,15 @@ g path {
 .content .info .table .col__content {
   padding: 15px 10px;
   background-color: #C4C4C4;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+}
+.content .info .table .col__content span {
+  display: block;
+  min-height: 40px;
+  margin-bottom: 15px;
 }
 .content .info__left {
   grid-area: l;
