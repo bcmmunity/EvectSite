@@ -1,7 +1,7 @@
 let login = document.getElementById("login");
 let err = document.querySelector('.form__err');
-const url = "https://localhost:5001/api/api/";
-// const url = "https://bot.diffind.com/api/api/";
+// const url = "https://localhost:5001/api/api/";
+const url = "https://bot.diffind.com/api/api/";
 
 
 function validateEmail(email) {

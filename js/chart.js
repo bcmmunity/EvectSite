@@ -59,7 +59,10 @@ function countDatesByInterval(d, interval = 10) {
 
 
       oldDate.setMinutes(j * interval);
-      dates.push([[newDate.getHours(),newDate.getMinutes(), 0, 0],count])
+      if (dates.length > 0) {
+        count = count + dates[dates.length - 1][1];
+      }
+      dates.push([[newDate.getHours() - 3,newDate.getMinutes(), 0, 0], count])
 
 
     }
@@ -117,8 +120,8 @@ let dat = []
 
 
 window.onload = async () => {
-  // const url = "https://bot.diffind.com/api/api/";
-  const url = "https://localhost:5001/api/api/";
+  const url = "https://bot.diffind.com/api/api/";
+  // const url = "https://localhost:5001/api/api/";
 
   const apiKey = localStorage.getItem("apiKey");
   const eventId = localStorage.getItem("eventId");
@@ -161,13 +164,14 @@ window.onload = async () => {
   })
 
 
-
   dat = countDatesByInterval(dat, 5);
 
 
   google.charts.load('current', {'packages':['corechart']});
 
   google.charts.setOnLoadCallback(drawBasic);
+
+
 
   let question = document.getElementById("question");
   let participant = document.getElementById("participant");
